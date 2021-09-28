@@ -2,9 +2,8 @@
     <select class="form-select" aria-label="Default select example" 
             v-model="selectedLanguage" @change="changeLanguage($event)"
         > 
-            <option v-for="item in siteActiveLanguage" :key="item.id"
-                    :value="item.id"> 
-                        {{ item.id }}
+            <option v-for="item in siteActiveLanguage" :key="item.id" :value="item.id"> 
+                {{ item.id }}
             </option>  
     </select>  
 </template>
