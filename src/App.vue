@@ -1,20 +1,16 @@
 <template>
-  <div>  
-
-    <Header /> 
+  <div>   
+    <Header />  
 
     <main>
         <div class="container pt-4">
             <router-view> </router-view>  
         </div>
-    </main> 
-        
-    <footer>
-      <Footer /> 
-    </footer>
+    </main>  
 
-    <LoginModal />
-  
+    <footer>  <Footer /> </footer> 
+    
+    <LoginModal /> 
   </div>
 </template>
 

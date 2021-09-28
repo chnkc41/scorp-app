@@ -94,18 +94,12 @@ export default {
             pageName: "", 
         } 
     },
-    created() { 
-        /*console.log(this.$store.getters.activeUser) 
-        console.log(this.activeUser.isActive)*/
+    created() {  
     },
     methods: {
         clickMenuItem() {   
             this.menuToogle = !this.menuToogle 
-        },
-        /*updateActiveLanguage() {
-            //this.$store.state.selectedLanguage = this.language 
-            this.$store.commit("changeLanguage", this.language)
-        },*/
+        }, 
         destroyUser() {  
             this.$store.commit("destroyUser", '') 
         }

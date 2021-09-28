@@ -1,8 +1,9 @@
 import { createStore } from "vuex"
+let lang = localStorage.getItem("lang") ? localStorage.getItem("lang") : "en" 
 
 const store = createStore({
     state: {
-        selectedLanguage: localStorage.getItem("lang"),
+        selectedLanguage: lang,
         siteLanguages: [
             { id: "tr", name: "Turkish", isActive: true },
             { id: "en", name: "English", isActive: true },

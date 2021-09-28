@@ -14,8 +14,7 @@ import { mapGetters } from "vuex"
 
 export default {
     data() {
-        return {  
-            //language: "EN", 
+        return {   
         } 
     },
     created() {
