@@ -1,20 +1,46 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>  
+
+    <Header /> 
+
+    <main>
+        <div class="container pt-4">
+            <router-view> </router-view>  
+        </div>
+    </main> 
+        
+    <footer>
+      <Footer /> 
+    </footer>
+
+    <LoginModal />
+  
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
+import Header from "@/components/Layout/Header" 
+import Footer from "@/components/Layout/Footer" 
+import LoginModal from "@/components/Login/Login" 
+import { mapGetters } from "vuex"
+
+export default { 
+  components: { 
+    Header, 
+    Footer,
+    LoginModal
+  }, 
+  methods: { 
+  },
+  computed: {
+    ...mapGetters(["siteActiveLanguage", "activeUser"]), 
   }
 }
-</script>
+</script> 
 
-<style>
+<style> 
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

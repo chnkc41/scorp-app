@@ -1,0 +1,60 @@
+{
+    "message": {
+       "hello": "merhaba dünya",
+       "menu": {
+            "home": "Anasayfa",
+            "contact": "İletişim",
+            "login": "Giriş",
+            "logout": "Çıkış"
+        },
+        "views": {
+            "home": {
+                "title": "Anasayfa",
+                "content": "Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur."
+            },
+            "contact": {
+                "title": "İletişim Sayfası",
+                "content": "İletişim için lütfen aşağıdaki formu kullanınız.",
+                "forms": {
+                    "username": "Kullanıcı Adı",
+                    "email": "E-posta",
+                    "tel": "Telefon",
+                    "country": "Ülke",
+                    "textField": "Mesaj",
+                    "send": "Gönder",
+                    "authentication": {
+                        "approved": "Onaylandı",
+                        "username": "Lütfen bir kullanıcı adı giriniz!",
+                        "email": "Lütfen geçerli bir mail adresi giriniz!",
+                        "tel": "Lütfen geçerli bir telefon numarası giriniz!"
+                    }
+                }
+            }
+        },
+        "footer": {
+            "title": "Altbilgi Alanı"
+        },
+        "forms": {
+            "login": {
+                "title": "Giriş Formu",
+                "username": "Kullanıcı Adı:",
+                "email": "E-Posta:",
+                "password": "Şifre",
+                "buttons": {
+                    "login": "Giriş",
+                    "close": "Kapat"
+                }
+            } 
+        },
+        "countryList": {
+            "tr": "Türkiye",
+            "us": "America",
+            "gb": "İngiltere",
+            "de": "Almanya",
+            "se": "İsveç",
+            "ke": "Kenya",
+            "br": "Brazilya",
+            "zw": "Zimbabve"
+        }  
+    }
+}

@@ -1,0 +1,60 @@
+{
+    "message": { 
+        "hello": "hello world",
+        "menu": {
+            "home": "Home",
+            "contact": "Contact",
+            "login": "Login",
+            "logout": "Logout"
+        },
+        "views": {
+            "home": {
+                "title": "Home Page",
+                "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"
+            },
+            "contact": {
+                "title": "Contact Page",
+                "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+                "forms": {
+                    "username": "Username",
+                    "email": "Email",
+                    "tel": "Tel",
+                    "country": "Country",
+                    "textField": "Message",
+                    "send": "Send",
+                    "authentication": {
+                        "approved": "Approved",
+                        "username": "Please write an username",
+                        "email": "Please write an valid email",
+                        "tel": "Please write an valid phone"
+                    }
+                }
+            }
+        },
+        "footer": {
+            "title": "Footer Area"
+        },
+        "forms": {
+            "login": {
+                "title": "Login Form",
+                "username": "Username:",
+                "email": "Email:",
+                "password": "Password",
+                "buttons": {
+                    "login": "Login",
+                    "close": "Close"
+                }
+            }
+        },
+        "countryList": {
+            "tr": "Turkey",
+            "us": "United States of America",
+            "gb": "United Kingdom",
+            "de": "Germany",
+            "se": "Sweden",
+            "ke": "Kenya",
+            "br": "Brazil",
+            "zw": "Zimbabwe"
+        }   
+    }
+}

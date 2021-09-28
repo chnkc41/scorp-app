@@ -1,5 +1,10 @@
 # scorp-app
 
+## Vue.js version
+```
+Vue.Js V3
+```
+
 ## Project setup
 ```
 npm install
