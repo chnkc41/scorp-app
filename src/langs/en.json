@@ -46,15 +46,21 @@
                 }
             }
         },
-        "countryList": {
-            "tr": "Turkey",
-            "us": "United States of America",
-            "gb": "United Kingdom",
-            "de": "Germany",
-            "se": "Sweden",
-            "ke": "Kenya",
-            "br": "Brazil",
-            "zw": "Zimbabwe"
-        }   
+        "countryList": [
+            { "id": "TR", "name": "Turkey" },
+            { "id": "US", "name": "United States of America" },
+            { "id": "GB", "name": "United Kingdom" },
+            { "id": "DE", "name": "Germany" },
+            { "id": "SE", "name": "Sweden" },
+            { "id": "KE", "name": "Kenya" },
+            { "id": "BR", "name": "Brazil" },
+            { "id": "ZW", "name": "Zimbabwe" }
+        ], 
+        "countryList2": ["Turkey", "United States of America","United Kingdom","Germany","Sweden"],
+        "currentPage": {
+            "home": "Scorp",
+            "contact": "Contact Page"
+        },
+        "input-placeholder": "required area"
     }
 }

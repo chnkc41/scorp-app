@@ -1,11 +1,19 @@
 <template>
-    <select class="form-select" aria-label="Default select example" 
-            v-model="selectedLanguage" @change="changeLanguage($event)"
-        > 
-            <option v-for="item in siteActiveLanguage" :key="item.id" :value="item.id"> 
-                {{ item.id }}
-            </option>  
-    </select>  
+    <li class="nav__item dropdown">
+        <a href="#" class="nav__link dropdown__link"> 
+            {{ selectedLanguage }} 
+            <box-icon name='chevron-down' class="dropdown__icon" ></box-icon>
+        </a> 
+        <ul class="dropdown__menu">
+            <li class="dropdown__item" 
+                v-for="item in siteActiveLanguages" :key="item.id"
+                @click="selectLanguage(item.id)">
+                <a href="#" class="nav__link"> 
+                    {{ item.id }} 
+                </a>
+            </li> 
+        </ul>
+    </li> 
 </template>
 
 <script>
@@ -14,21 +22,18 @@ import { mapGetters } from "vuex"
 
 export default {
     data() {
-        return {   
+        return {    
         } 
-    },
-    created() {
-        localStorage.getItem("lang") ? '' : localStorage.setItem("lang", "en") 
-    },
+    }, 
     methods: {
-        changeLanguage(event) { 
-            this.$store.commit("changeLanguage", event.target.value)
-            this.$i18n.locale = event.target.value
-            localStorage.setItem("lang", event.target.value)
+        selectLanguage(e) {  
+            this.$store.commit("changeLanguage", e)
+            this.$i18n.locale = e
+            localStorage.setItem("lang", e)
         },
     },
     computed: {
-        ...mapGetters(["siteActiveLanguage", "selectedLanguage"]),  
-    }
+        ...mapGetters(["siteActiveLanguages", "selectedLanguage"]),  
+    },
 }
-</script>
+</script> 

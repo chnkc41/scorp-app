@@ -7,107 +7,100 @@
         <div class="col-md-6 mx-auto border p-5">
             <form @submit.prevent="submitForm"></form>
             <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label text-start d-block">
+                <label for="contact-name" class="form-label text-start d-block">
                     {{ $t("message.views.contact.forms.username") }}
+                    <box-icon type='solid' name='star' class="labelStar"></box-icon>  
                 </label>
                 <input 
                     type="text" 
                     class="form-control" 
+                    :placeholder="$t('message.input-placeholder')"
                     :class="{'is-invalid' : v$.username.$error} "
-                    id="exampleInputEmail1" 
-                    aria-describedby="userHelp"
+                    id="contact-name"  
                     v-model="username" 
                     @blur="v$.username.$touch()"
                 >
-                <div id="userHelp" class="form-text text-success"
+                <div class="form-text text-success"
                      v-if="!v$.username.required.$invalid && !v$.username.$error" >  
                         {{ $t("message.views.contact.forms.authentication.approved") }} 
                 </div>
-                <div id="userHelp" class="form-text text-danger"
+                <div class="form-text text-danger"
                      v-if="v$.username.$error" >  
                         {{ $t("message.views.contact.forms.authentication.username") }}  
                 </div>
             </div>
             <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label text-start d-block">
+                <label for="contact-email" class="form-label text-start d-block">
                     {{ $t("message.views.contact.forms.email") }}
+                    <box-icon type='solid' name='star' class="labelStar"></box-icon>  
                 </label>
                 <input 
                     type="email" 
                     class="form-control" 
+                    :placeholder="$t('message.input-placeholder')"
                     :class="{'is-invalid' : v$.email.$error }"
-                    id="exampleInputEmail1" 
-                    aria-describedby="emailHelp"
+                    id="contact-email"  
                     v-model="email"
                     @blur="v$.email.$touch()"
                 >
-                <div id="userHelp" class="form-text text-success"
+                <div class="form-text text-success"
                      v-if="!v$.email.required.$invalid && !v$.email.$error" >  
                         {{ $t("message.views.contact.forms.authentication.approved") }} 
                 </div>
-                <div id="emailHelp" class="form-text text-danger"
+                <div class="form-text text-danger"
                      v-if="v$.email.$error">  
                         {{ $t("message.views.contact.forms.authentication.email") }}  
                 </div> 
             </div>
 
             <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label text-start d-block">
+                <label for="contact-tel" class="form-label text-start d-block">
                     {{ $t("message.views.contact.forms.tel") }}
+                    <box-icon type='solid' name='star' class="labelStar"></box-icon>  
                 </label>
                 <div class="input-group">
-                    <label for="exampleInputEmail1" class="input-group-text" 
+                    <label for="contact-tel" class="input-group-text" 
                             :class="{'border-danger' : v$.tel.$error }"> 05 </label>
                     <input 
                         type="number" 
                         class="form-control" 
+                        :placeholder="$t('message.input-placeholder')"
                         :class="{'is-invalid' : v$.tel.$error }"
-                        id="exampleInputEmail1" 
+                        id="contact-tel" 
                         aria-describedby="emailHelp"
                         v-model="tel"
                         @blur="v$.tel.$touch()"
                     >
                 </div> 
-                <div id="userHelp" class="form-text text-success"
+                <div class="form-text text-success"
                      v-if="!v$.tel.required.$invalid && !v$.tel.$error" >  
                         {{ $t("message.views.contact.forms.authentication.approved") }} 
                 </div>
-                <div id="emailHelp" class="form-text text-danger"
+                <div class="form-text text-danger"
                      v-if="v$.tel.$error">  
                         {{ $t("message.views.contact.forms.authentication.tel") }}  
                 </div> 
             </div>
-  
+
+            
+
             <div class="mb-3">
                 <label for="exampleDataList" class="form-label text-start d-block">
                     {{ $t("message.views.contact.forms.country") }}
                 </label>
-                <input 
-                    class="form-control" 
-                    list="datalistOptions" 
-                    id="exampleDataList" 
-                    placeholder="Type to search..."
-                    v-model="country"
-                >
-                <datalist id="datalistOptions">
-                    <option :value='$t("message.countryList.tr")' />
-                    <option :value='$t("message.countryList.us")' />
-                    <option :value='$t("message.countryList.gb")' />
-                    <option :value='$t("message.countryList.de")' />
-                    <option :value='$t("message.countryList.se")' />
-                    <option :value='$t("message.countryList.ke")' />
-                    <option :value='$t("message.countryList.br")' />
-                    <option :value='$t("message.countryList.zw")' /> 
-                </datalist>
+                <v-select 
+                    :options="selectedLanguage == 'en' ?  countryListEn : countryListTr" 
+                    v-model="country" >
+                </v-select> 
             </div>
-
+ 
             <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label text-start d-block">
+                <label for="contact-message" class="form-label text-start d-block">
                     {{ $t("message.views.contact.forms.textField") }}
                 </label>
                 <textarea 
                     class="form-control" 
-                    id="exampleFormControlTextarea1" 
+                    id="contact-message" 
                     rows="3"
                     v-model="message"
                     >
@@ -115,40 +108,60 @@
             </div>
 
             <div class="mb-3">
-                <button class="btn btn-outline-success" @click="submitForm()" :disabled="v$.$invalid" >
+                <button class="btn px-4" 
+                :class="[v$.$invalid ? 'btn-outline-success' : 'btn-success' ]"
+                        @click="submitForm()" 
+                        :disabled="v$.$invalid" >
                     {{ $t("message.views.contact.forms.send") }}
                 </button> 
             </div>          
         </div>  
     </div> 
 </template>
- 
+  
 
  <script>
 import { mapGetters } from "vuex"
 import useVuelidate from '@vuelidate/core'
-import { required, email, numeric } from '@vuelidate/validators' 
- 
+import {VueSelect as vSelect} from 'vue3-select'
+import { required, email, numeric, minLength, maxLength } from '@vuelidate/validators' 
+
 
  export default { 
+    components: {
+        'v-select': vSelect
+    },
     setup () {
         return { v$: useVuelidate() }
     },
     data() {
         return {
-            username: this.$store.getters.activeUser.username,
-            email: this.$store.getters.activeUser.email, 
+            lang: null,
+            username: null,
+            email: null, 
             tel: null, 
             country: null,
-            message: null
+            message: null,
+            countryListEn: ["Turkey", "United States of America","United Kingdom","Germany","Sweden"],
+            countryListTr: ["Türkiye", "Amerika","İngiltere","Almanya","İsveç"]
         }
     },
     validations () {
         return {
             username: { required },  
             email: { required, email },  
-            tel: { required, numeric },   
+            tel: { 
+                required, 
+                numeric,
+                minLength: minLength(9),
+                maxLength: maxLength(9),
+            },   
         }
+    },
+    created() {
+        this.username = this.$store.getters.getCurrentUser?.username 
+        this.email = this.$store.getters.getCurrentUser?.email   
+        this.lang = localStorage.getItem("lang")
     },
     methods: {
         submitForm() {
@@ -163,7 +176,23 @@ import { required, email, numeric } from '@vuelidate/validators'
         }
     },
     computed: {
-        ...mapGetters(["activeUser"]),  
-    },  
+        ...mapGetters(["getCurrentUser", "selectedLanguage","selectedCountry"]),   
+    }, 
+    watch: {
+        getCurrentUser(newData) {
+            this.username = newData.username
+            this.email = newData.email 
+        },
+        selectedLanguage() {
+             this.country = null
+        }
+    } 
  }
  </script>
+
+<style>
+.labelStar {
+    width: 12px;
+    padding-top: 10px;
+}
+</style>

@@ -1,14 +1,14 @@
 import { createRouter, createWebHistory } from "vue-router"
-import HomeCmp from "@/views/Home" 
+//import HomeCmp from "@/views/Home" 
 
 const routes = [
     {
-        name: "HomePage",
+        name: "home",
         path: "/",
-        component: HomeCmp 
+        component: () => import("@/views/Home") 
     }, 
     {
-        name: "ContactPage",
+        name: "contact",
         path: "/contact", 
         component: () => import("@/views/Contact")
     }

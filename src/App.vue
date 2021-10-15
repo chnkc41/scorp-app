@@ -1,6 +1,6 @@
 <template>
   <div>   
-    <Header />  
+    <appHeader />  
 
     <main>
         <div class="container pt-4">
@@ -8,7 +8,7 @@
         </div>
     </main>  
 
-    <footer>  <Footer /> </footer> 
+    <appFooter />
     
     <LoginModal /> 
   </div>
@@ -16,22 +16,13 @@
 
 <script>
 
-import Header from "@/components/Layout/Header" 
-import Footer from "@/components/Layout/Footer" 
 import LoginModal from "@/components/Login/Login" 
-import { mapGetters } from "vuex"
+//import { mapGetters } from "vuex"
 
 export default { 
-  components: { 
-    Header, 
-    Footer,
+  components: {  
     LoginModal
   }, 
-  methods: { 
-  },
-  computed: {
-    ...mapGetters(["siteActiveLanguage", "activeUser"]), 
-  }
 }
 </script> 
 
@@ -43,6 +34,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin: 100px auto;
 }
 </style>

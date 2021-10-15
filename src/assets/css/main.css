@@ -20,12 +20,12 @@
   --z-fixed: 100;
 }
 
-@media screen and (min-width: 768px) {
+/*@media screen and (min-width: 768px) {
   :root {
     --nav-name-font-size: 1rem;
     --normal-font-size: 1rem;
   }
-}
+}*/
 
 /*===== BASE =====*/
  
@@ -117,16 +117,30 @@ a {
 
 .nav__menu {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   width: 55%;
 }
 
-.nav__perfil {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  margin-bottom: 3rem;
+.nav__perfil { 
+  flex-direction: column; 
+}
+
+.nav__list { 
+  text-align: left;
+}
+
+@media screen and (max-width: 768px) {
+  .nav__menu {
+    display: block; 
+    width: auto;
+  }
+  .nav__perfil { 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 3rem;
+    }
 }
 
 .nav__img {
@@ -222,15 +236,15 @@ a {
     align-items: center;
   }
   .nav__perfil {
+    display: flex;
     flex-direction: row;
     text-align: initial;
     margin-bottom: 0;
   }
   .nav__img { 
     margin-right: .5rem;
-    margin-bottom: 0;
-    margin-top: 10px;
-    width: 100px;
+    margin-bottom: 0; 
+    width: 40px;
   } 
  .nav__name {
     display: none; 
@@ -260,14 +274,16 @@ a {
   }
   .dropdown {
     position: relative;
+    list-style-type: none;
   }
   .dropdown__menu {
     position: fixed;
     margin: 0;
-    top: calc(var(--header-height) + 1rem);
+    top: auto; /* calc(var(--header-height) + 1rem); */
     padding: .5rem 1.5rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: .5rem;
+    background-color: var(--white-color);
   }
   .dropdown__item {
     margin: .5rem 0;
@@ -279,4 +295,15 @@ a {
     margin-left: auto;
     margin-right: auto;
   }
+}
+
+/************************* vue-select ***********************/
+.vs__dropdown-toggle {
+  height: 38px !important;
+}
+
+.vs__selected {
+  position: absolute;
+  z-index: 99 !important;
+  padding-top: 6px !important;
 }

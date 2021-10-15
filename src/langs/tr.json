@@ -55,6 +55,11 @@
             "ke": "Kenya",
             "br": "Brazilya",
             "zw": "Zimbabve"
-        }  
+        },
+        "currentPage": {
+            "home": "Scorp",
+            "contact": "İletişim Sayfası"
+        },
+        "input-placeholder" : "zorunlu alan"
     }
 }
